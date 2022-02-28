@@ -79,22 +79,22 @@ public class FavoriteFragment extends Fragment {
     @Override
     public void onStart() {
         super.onStart();
-        EventBus.getDefault().register(this);
+       EventBus.getDefault().register(this);
     }
 
     @Override
     public void onStop() {
         super.onStop();
-        EventBus.getDefault().unregister(this);
+       EventBus.getDefault().unregister(this);
     }
 
     /**
      * Fired if the user clicks on a delete button
      * @param event
-     *//*
+     */
     @Subscribe
     public void onDeleteFavorite(DeleteFavoriteEvent event) {
         mApiService.deleteFavorite(event.favorite);
         initList();
-    }*/
+    }
 }

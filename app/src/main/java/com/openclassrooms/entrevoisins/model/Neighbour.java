@@ -26,14 +26,7 @@ public class Neighbour implements Serializable {
     /** About me */
     private String aboutMe;
 
-    public boolean isFavorite() {
-        return favorite;
-    }
-
-    public void setFavorite(boolean favorite) {
-        this.favorite = favorite;
-    }
-
+    /** Favorite */
     private boolean favorite = false;
     /**
      * Constructor
@@ -98,6 +91,14 @@ public class Neighbour implements Serializable {
 
     public void setAboutMe(String aboutMe) {
         this.aboutMe = aboutMe;
+    }
+
+    public boolean isFavorite() {
+        return favorite;
+    }
+
+    public void setFavorite(boolean favorite) {
+        this.favorite = favorite;
     }
 
     @Override

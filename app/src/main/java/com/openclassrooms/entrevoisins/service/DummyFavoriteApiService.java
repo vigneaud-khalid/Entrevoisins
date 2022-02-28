@@ -9,6 +9,8 @@ import java.util.List;
  */
 public class DummyFavoriteApiService implements FavoriteApiService {
 
+    private List<Neighbour> neighbours = DummyNeighbourGenerator.generateNeighbours();
+
     private List<Neighbour> favorites = DummyFavoriteGenerator.generateFavorites();
 
     /**
@@ -16,6 +18,11 @@ public class DummyFavoriteApiService implements FavoriteApiService {
      */
     @Override
     public List<Neighbour> getFavorites() {
+        for (Neighbour neighbour: neighbours) {
+            if (neighbour.isFavorite()) {
+                favorites.add(neighbour);
+            }
+            };
         return favorites;
     }
 
@@ -36,3 +43,5 @@ public class DummyFavoriteApiService implements FavoriteApiService {
         favorites.add(favorite);
     }
 }
+
+

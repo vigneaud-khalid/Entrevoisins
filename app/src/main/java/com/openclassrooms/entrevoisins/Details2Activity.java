@@ -1,21 +1,33 @@
 package com.openclassrooms.entrevoisins;
 
+import android.content.Context;
+import android.net.Uri;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import com.bumptech.glide.Glide;
+import com.bumptech.glide.request.RequestOptions;
+import com.openclassrooms.entrevoisins.events.AddFavoriteEvent;
 import com.openclassrooms.entrevoisins.model.Neighbour;
+import com.openclassrooms.entrevoisins.ui.neighbour_list.MyNeighbourRecyclerViewAdapter;
+
+import org.greenrobot.eventbus.EventBus;
+
+import java.net.URI;
 
 public class Details2Activity extends AppCompatActivity {
 
-    private ImageView mAvatarUrl;
+    private ImageView mAvatar;
     private FloatingActionButton mFavoriteStar;
-    private FloatingActionButton mBackArrow;
+    private ImageButton mBackArrow;
     private TextView mNameOnImage;
     private TextView mName;
     private TextView mAddress;
@@ -23,6 +35,7 @@ public class Details2Activity extends AppCompatActivity {
     private TextView mContact;
     private TextView mAboutMe;
 
+    private Uri mURL;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,11 +43,10 @@ public class Details2Activity extends AppCompatActivity {
         setContentView(R.layout.activity_details);
         Neighbour neighbour = (Neighbour) getIntent().getExtras().getSerializable("Neighbour");
         Log.d("llll",neighbour.getName());
-        mAvatarUrl = findViewById(R.id.details_imageview_avatar);
-
-        mBackArrow = findViewById(R.id.details_back_arrow);
-
-        mFavoriteStar = findViewById(R.id.details_favorite);
+        mAvatar = findViewById(R.id.details_imageview_avatar);
+        Glide.with(mAvatar.getContext())
+                .load(neighbour.getAvatarUrl())
+                .into(mAvatar);
 
         mNameOnImage = findViewById(R.id.details_textview_nameOnImage);
         mNameOnImage.setText(neighbour.getName());
@@ -49,11 +61,24 @@ public class Details2Activity extends AppCompatActivity {
         mAboutMe = findViewById(R.id.details_textview_about);
         mAboutMe.setText(neighbour.getAboutMe());
 
-
+        mBackArrow = findViewById(R.id.details_back_arrow);
         mBackArrow.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                onDestroy();
+                finish();
+            }
+        });
+
+        mFavoriteStar = findViewById(R.id.details_favorite);
+        mFavoriteStar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                //Context context = this.getContext();
+                //Toast.makeText(context,"Test reussi !",Toast.LENGTH_LONG).show();
+                // add to favorites
+                // EventBus.getDefault().post(new AddFavoriteEvent(neighbour));
+                neighbour.setFavorite(true);
+                Log.d("isFavorite?  ", String.valueOf(neighbour.isFavorite()));
             }
         });
 
