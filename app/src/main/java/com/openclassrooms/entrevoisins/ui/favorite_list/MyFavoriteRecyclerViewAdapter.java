@@ -9,6 +9,7 @@ import android.view.ViewGroup;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.RequestOptions;
@@ -58,7 +59,7 @@ public class MyFavoriteRecyclerViewAdapter extends RecyclerView.Adapter<MyFavori
             @Override
             public void onClick(View view) {
                 Context context = holder.mFavoriteAvatar.getContext();
-                //Toast.makeText(context,"Test reussi !",Toast.LENGTH_LONG).show();
+                Toast.makeText(context,"Test reussi !",Toast.LENGTH_LONG).show();
                 Intent detailsActivityIntent = new Intent(context, DetailsActivity.class);
                 detailsActivityIntent.putExtra("Favorite", favorite);
                 context.startActivity(detailsActivityIntent);

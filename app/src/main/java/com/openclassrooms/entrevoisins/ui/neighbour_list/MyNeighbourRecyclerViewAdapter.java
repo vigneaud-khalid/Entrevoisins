@@ -29,9 +29,7 @@ public class MyNeighbourRecyclerViewAdapter extends RecyclerView.Adapter<MyNeigh
 
     private final List<Neighbour> mNeighbours;
 
-    public MyNeighbourRecyclerViewAdapter(List<Neighbour> items) {
-        mNeighbours = items;
-    }
+    public MyNeighbourRecyclerViewAdapter(List<Neighbour> items) { mNeighbours = items; }
 
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
