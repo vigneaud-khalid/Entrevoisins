@@ -15,7 +15,7 @@ import com.openclassrooms.entrevoisins.R;
 import com.openclassrooms.entrevoisins.di.DI;
 import com.openclassrooms.entrevoisins.events.DeleteFavoriteEvent;
 import com.openclassrooms.entrevoisins.model.Neighbour;
-import com.openclassrooms.entrevoisins.service.FavoriteApiService;
+import com.openclassrooms.entrevoisins.service.NeighbourApiService;
 
 import org.greenrobot.eventbus.EventBus;
 import org.greenrobot.eventbus.Subscribe;
@@ -30,7 +30,7 @@ import java.util.List;
  */
 public class FavoriteFragment extends Fragment {
 
-    private FavoriteApiService mApiService;
+    private NeighbourApiService mApiService;
     private List<Neighbour> mFavorites;
     private RecyclerView mRecyclerView;
 
@@ -46,7 +46,7 @@ public class FavoriteFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        mApiService = DI.getFavoriteApiService();
+        mApiService = DI.getNeighbourApiService();
         // comments
 
     }

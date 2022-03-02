@@ -12,43 +12,43 @@ import java.util.Objects;
  */
 public class Favorite implements Serializable {
 
-    /**
+  /*  *//**
      * Identifier
-     */
+     *//*
     private long id;
 
-    /**
+    *//**
      * Full name
-     */
+     *//*
     private String name;
 
-    /**
+    *//**
      * Avatar
-     */
+     *//*
     private String avatarUrl;
 
-    /**
+    *//**
      * Adress
-     */
+     *//*
     private String address;
 
-    /**
+    *//**
      * Phone number
-     */
+     *//*
     private String phoneNumber;
 
-    /**
+    *//**
      * About me
-     */
+     *//*
     private String aboutMe;
 
-    /**
+    *//**
      * Constructor
      *
      * @param id
      * @param name
      * @param avatarUrl
-     */
+     *//*
     public Favorite(long id, String name, String avatarUrl, String address,
                     String phoneNumber, String aboutMe) {
         this.id = id;
@@ -105,5 +105,5 @@ public class Favorite implements Serializable {
 
     public void setAboutMe(String aboutMe) {
         this.aboutMe = aboutMe;
-    }
+    }*/
 }

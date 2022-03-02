@@ -30,21 +30,21 @@ public class DI {
     }
 
 
-    private static FavoriteApiService serviceF = new DummyFavoriteApiService();
+/*    private static FavoriteApiService serviceF = new DummyFavoriteApiService();
 
-    /**
+    *//**
      * Get an instance on @{@link FavoriteApiService}
      * @return
-     */
+     *//*
     public static FavoriteApiService getFavoriteApiService() {
         return serviceF;
     }
 
-    /**
+    *//**
      * Get always a new instance on @{@link FavoriteApiService}. Useful for tests, so we ensure the context is clean.
      * @return
-     */
+     *//*
     public static FavoriteApiService getNewInstanceApiServiceF() {
         return new DummyFavoriteApiService();
-    }
+    }*/
 }
