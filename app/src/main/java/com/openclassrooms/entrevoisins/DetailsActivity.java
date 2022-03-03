@@ -15,6 +15,7 @@ import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.RequestOptions;
+import com.openclassrooms.entrevoisins.di.DI;
 import com.openclassrooms.entrevoisins.events.AddFavoriteEvent;
 import com.openclassrooms.entrevoisins.events.DeleteNeighbourEvent;
 import com.openclassrooms.entrevoisins.model.Neighbour;
@@ -45,6 +46,7 @@ public class DetailsActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        mApiService = DI.getNeighbourApiService();
         setContentView(R.layout.activity_details);
         Neighbour neighbour = (Neighbour) getIntent().getExtras().getSerializable("Neighbour");
         Log.d("llll",neighbour.getName());
@@ -79,7 +81,6 @@ public class DetailsActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                 EventBus.getDefault().post(new AddFavoriteEvent(neighbour));
                 Log.d("!!  ", neighbour.getName());
                     neighbour.setFavorite(true);
                 Log.d("isFavorite?  ", String.valueOf(neighbour.isFavorite()));
