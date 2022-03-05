@@ -68,4 +68,18 @@ public class NeighboursListTest {
         // Then : the number of element is 11
         onView(ViewMatchers.withId(R.id.list_neighbours)).check(withItemCount(ITEMS_COUNT-1));
     }
+    /**
+     * When we delete an item, the details of the neihbour is shown
+     */
+    @Test
+    public void myNeighboursList_showDetails_shouldOpenDetailsActivity() {
+        // Given : We open DetailsActivity
+        onView(ViewMatchers.withId(R.id.list_neighbours)).check(withItemCount(ITEMS_COUNT));
+        // When perform a click on a neighbour avatar
+        onView(ViewMatchers.withId(R.id.list_neighbours))
+                .perform(RecyclerViewActions.actionOnItemAtPosition(1, new DeleteViewAction()));
+        // Then : We open DetailsActivity
+        onView(ViewMatchers.withId(R.id.list_neighbours)).check(withItemCount(ITEMS_COUNT-1));
+    }
+
 }
