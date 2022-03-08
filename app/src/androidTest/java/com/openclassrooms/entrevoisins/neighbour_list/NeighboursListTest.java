@@ -74,14 +74,18 @@ public class NeighboursListTest {
         onView(ViewMatchers.withId(R.id.list_neighbours)).check(withItemCount(ITEMS_COUNT-1));
     }
     /**
-     * When we delete an item, the details of the neihbour is shown
+     * When we click an item, the details of the neighbour is shown
      */
     @Test
     public void myNeighboursList_showDetails_shouldOpenDetailsActivity() {
+
+        // BEST to process with the intent
+        // but intend is from androidx
+
         // When perform a click on a neighbour avatar
         onView(ViewMatchers.withId(R.id.list_neighbours))
-                .perform(click());
-        // Then : We open DetailsActivity
+                .perform(RecyclerViewActions.actionOnItemAtPosition(0, click()));
+        // Then : We open DetailsActivity and show a specific  details : favorite name on the avatar view
         onView(ViewMatchers.withId(R.id.details_textview_nameOnImage)).check(matches(withText("Caroline")));
     }
 

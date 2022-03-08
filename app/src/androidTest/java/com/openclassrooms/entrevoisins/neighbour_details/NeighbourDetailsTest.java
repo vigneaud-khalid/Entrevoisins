@@ -50,20 +50,24 @@ public class NeighbourDetailsTest {
     }
 
     @Test
-    public void showNeighbourDetails() {
+    public void showNeighbourDetailsDisplayed() {
         // Given : We display the the neighbour details
+        // When perform a click on a neighbour avatar
         onView(ViewMatchers.withId(R.id.list_neighbours))
                 .perform(RecyclerViewActions.actionOnItemAtPosition(0, click()));
-        onView(ViewMatchers.withId(R.id.details_textview_descriptionName)).check(matches(withText("Caroline")));
+        // Then : We open DetailsActivity and show the details screen is displayed
+        onView(ViewMatchers.withId(R.id.details_textview_descriptionName)).check(matches(isDisplayed()));
+
     }
 
     @Test
-    public void showNeighbourDetailsDisplayed() {
-        // Given : We display the the neighbour details ????
+    public void showNeighbourDetailsNameMatches() {
+        // Given : We display the the neighbour name
+        // When perform a click on a neighbour avatar
         onView(ViewMatchers.withId(R.id.list_neighbours))
                 .perform(RecyclerViewActions.actionOnItemAtPosition(0, click()));
-        onView(ViewMatchers.withId(R.id.details_textview_descriptionName)).check(matches(isDisplayed()));
-
+        // Then : We open DetailsActivity and show the name of the chosen neighbour
+        onView(ViewMatchers.withId(R.id.details_textview_descriptionName)).check(matches(withText("Caroline")));
     }
 
     @After
