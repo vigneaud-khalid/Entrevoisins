@@ -50,7 +50,7 @@
             android:layout_height="40dp"
             android:layout_marginLeft="15dp"
             android:layout_marginTop="145dp"
-            android:text="Caroline"
+            android:text="Carolin"
             android:textSize="29sp"
             android:textColor="#FFFFFFFF"></TextView>
 

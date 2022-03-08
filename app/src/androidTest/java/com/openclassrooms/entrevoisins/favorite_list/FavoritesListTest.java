@@ -1,8 +1,12 @@
 package com.openclassrooms.entrevoisins.favorite_list;
 
 
+import android.support.test.rule.ActivityTestRule;
 import android.support.test.runner.AndroidJUnit4;
 
+import com.openclassrooms.entrevoisins.ui.neighbour_list.ListNeighbourActivity;
+
+import org.junit.Rule;
 import org.junit.runner.RunWith;
 
 
@@ -17,4 +21,11 @@ import org.junit.runner.RunWith;
  */
 @RunWith(AndroidJUnit4.class)
 public class FavoritesListTest {
+    //test Espresso vérifiant que l’onglet Favoris n’affiche que les voisins marqués comme favoris
+
+    @Rule
+    public ActivityTestRule<ListNeighbourActivity> mActivityRule =
+            new ActivityTestRule(ListNeighbourActivity.class);
+
+
 }
