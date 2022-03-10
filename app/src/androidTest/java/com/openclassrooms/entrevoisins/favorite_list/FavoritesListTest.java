@@ -61,8 +61,14 @@ public class FavoritesListTest {
      */
     @Test
     public void myFavoritesList_shouldBeEmpty_beforeAddingAFavorite_andThenShouldNotBeEmpty() {
+        // on favorites tab
+        onView(ViewMatchers.withId(R.id.tabItem2))
+         .perform(click());
         // myFavoritesList should be empty
-        // onView(ViewMatchers.withId(R.id.list_neighbours)).check(matches(hasChildCount(0)));
+         onView(ViewMatchers.withId(R.id.list_favorites)).check(matches(hasChildCount(0)));
+        // on neighbours tab
+        onView(ViewMatchers.withId(R.id.tabItem))
+                .perform(RecyclerViewActions.actionOnItemAtPosition(0,click()));
         // When perform a click on a neighbour avatar to show details
         onView(ViewMatchers.withId(R.id.list_neighbours))
                 .perform(RecyclerViewActions.actionOnItemAtPosition(0,click()));
