@@ -3,6 +3,8 @@ package com.openclassrooms.entrevoisins.neighbour_list;
 
 import android.app.Activity;
 import android.support.test.espresso.contrib.RecyclerViewActions;
+import android.support.test.espresso.intent.Intents;
+import android.support.test.espresso.intent.rule.IntentsTestRule;
 import android.support.test.espresso.matcher.ViewMatchers;
 import android.support.test.rule.ActivityTestRule;
 import android.support.test.runner.AndroidJUnit4;
@@ -46,6 +48,9 @@ public class NeighboursListTest {
     @Rule
     public ActivityTestRule<ListNeighbourActivity> mActivityRule =
             new ActivityTestRule(ListNeighbourActivity.class);
+
+    public IntentsTestRule<DetailsActivity> mDetailsActivityTestRule =
+            new IntentsTestRule<>(DetailsActivity.class);
 
     @Before
     public void setUp() {
@@ -99,6 +104,7 @@ public class NeighboursListTest {
         onView(ViewMatchers.withId(R.id.list_neighbours))
                 .perform(RecyclerViewActions.actionOnItemAtPosition(2, click()));
         // Then : We open DetailsActivity
+        Intents.init();
         intended(hasComponent(DetailsActivity.class.getName()));
     }
 
