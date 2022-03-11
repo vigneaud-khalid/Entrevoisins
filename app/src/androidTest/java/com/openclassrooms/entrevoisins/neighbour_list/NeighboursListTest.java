@@ -7,6 +7,9 @@ import android.support.test.espresso.matcher.ViewMatchers;
 import android.support.test.rule.ActivityTestRule;
 import android.support.test.runner.AndroidJUnit4;
 import android.view.View;
+import static android.support.test.espresso.intent.Intents.intended;
+import static android.support.test.espresso.intent.matcher.IntentMatchers.hasComponent;
+
 
 import com.openclassrooms.entrevoisins.DetailsActivity;
 import com.openclassrooms.entrevoisins.R;
@@ -77,10 +80,7 @@ public class NeighboursListTest {
      * When we click an item, the details of the neighbour is shown
      */
     @Test
-    public void myNeighboursList_showDetails_shouldOpenDetailsActivity() {
-
-        // BEST to process with the intent
-        // but intend is from androidx
+    public void myNeighboursList_showDetails_shouldOpenDetailsActivity_withDetails() {
 
         // When perform a click on a neighbour avatar
         onView(ViewMatchers.withId(R.id.list_neighbours))
@@ -88,5 +88,19 @@ public class NeighboursListTest {
         // Then : We open DetailsActivity and show a specific  details : favorite name on the avatar view
         onView(ViewMatchers.withId(R.id.details_textview_nameOnImage)).check(matches(withText("Caroline")));
     }
+
+    /**
+     * When we click an item, DetailsActivity is opened
+     */
+    @Test
+    public void myNeighboursList_showDetails_shouldOpenDetailsActivity() {
+
+        // When perform a click on a neighbour avatar
+        onView(ViewMatchers.withId(R.id.list_neighbours))
+                .perform(RecyclerViewActions.actionOnItemAtPosition(2, click()));
+        // Then : We open DetailsActivity
+        intended(hasComponent(DetailsActivity.class.getName()));
+    }
+
 
 }

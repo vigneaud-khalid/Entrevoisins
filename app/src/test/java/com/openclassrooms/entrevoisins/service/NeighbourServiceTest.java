@@ -11,6 +11,7 @@ import org.junit.runners.JUnit4;
 
 import java.util.List;
 
+import static org.hamcrest.CoreMatchers.sameInstance;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertThat;
 
@@ -40,4 +41,15 @@ public class NeighbourServiceTest {
         service.deleteNeighbour(neighbourToDelete);
         assertFalse(service.getNeighbours().contains(neighbourToDelete));
     }
+
+//    test unitaire pour la mise en favori dans le Service
+    @Test
+    public void setFavoriteWithSuccess() {
+        Neighbour neighbourToSetFavorite = service.getNeighbours().get(0);
+        service.addFavorite(neighbourToSetFavorite);
+        Neighbour favorite = service.getFavorites().get(0);
+        assertThat(neighbourToSetFavorite, sameInstance(favorite);
+    }
+
+
 }

@@ -60,31 +60,28 @@ public class FavoritesListTest {
      * We ensure that our recyclerview is displaying one item
      */
     @Test
-    public void myFavoritesList_shouldBeEmpty_beforeAddingAFavorite_andThenShouldNotBeEmpty() {
+    public void myFavoritesList_shouldBeEmpty_beforeAddingOneFavorite_andThenShouldNotBeEmpty() {
         // on favorites tab
-        onView(ViewMatchers.withId(R.id.tabItem2))
+        onView(ViewMatchers.withText("FAVORITES"))
          .perform(click());
         // myFavoritesList should be empty
          onView(ViewMatchers.withId(R.id.list_favorites)).check(matches(hasChildCount(0)));
         // on neighbours tab
-        onView(ViewMatchers.withId(R.id.tabItem))
-                .perform(RecyclerViewActions.actionOnItemAtPosition(0,click()));
+        onView(ViewMatchers.withText("MY NEIGHBOURS"))
+                .perform(click());
         // When perform a click on a neighbour avatar to show details
         onView(ViewMatchers.withId(R.id.list_neighbours))
                 .perform(RecyclerViewActions.actionOnItemAtPosition(0,click()));
         // When perform a click on add to favorite icon
         onView(ViewMatchers.withId(R.id.details_favorite))
-                //.perform(RecyclerViewActions.actionOnItemAtPosition(0, click()));
                 .perform(click());
-
         // When perform a click on return icon
         onView(ViewMatchers.withId(R.id.details_back_arrow))
                 .perform(click());
         // When perform a click on favorite fragment
-        onView(ViewMatchers.withId(R.id.list_favorites))
+        onView(ViewMatchers.withText("FAVORITES"))
                 .perform(click());
         // Then : the number of element is 1
         onView(ViewMatchers.withId(R.id.list_favorites)).check(withItemCount(1));
-
     }
 }
