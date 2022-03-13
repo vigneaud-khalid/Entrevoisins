@@ -6,8 +6,7 @@ import static android.support.test.espresso.action.ViewActions.click;
 import static android.support.test.espresso.assertion.ViewAssertions.matches;
 import static android.support.test.espresso.matcher.ViewMatchers.assertThat;
 import static android.support.test.espresso.matcher.ViewMatchers.hasChildCount;
-import static android.support.test.espresso.matcher.ViewMatchers.hasMinimumChildCount;
-import static android.support.test.espresso.matcher.ViewMatchers.withText;
+
 import static com.openclassrooms.entrevoisins.utils.RecyclerViewItemCountAssertion.withItemCount;
 import static org.hamcrest.core.IsNull.notNullValue;
 
@@ -31,15 +30,12 @@ import org.junit.runner.RunWith;
  */
 
 
-
 /**
  * Test class for list of favorites
  */
 @RunWith(AndroidJUnit4.class)
 public class FavoritesListTest {
 
-
-    //test Espresso vérifiant que l’onglet Favoris n’affiche que les voisins marqués comme favoris
     private ListNeighbourActivity mActivity;
     private DetailsActivity mDetailsActivity;
 

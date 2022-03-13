@@ -15,6 +15,7 @@ import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.CoreMatchers.sameInstance;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertThat;
+import static org.junit.Assert.assertTrue;
 
 /**
  * Unit test on Neighbour service
@@ -43,7 +44,9 @@ public class NeighbourServiceTest {
         assertFalse(service.getNeighbours().contains(neighbourToDelete));
     }
 
-//    test unitaire pour la mise en favori dans le Service
+    /**
+     *  we ensure that a neighbour is set favorite
+     */
     @Test
     public void setFavoriteWithSuccess() {
         Neighbour neighbourToSetFavorite = service.getNeighbours().get(0);
@@ -52,9 +55,25 @@ public class NeighbourServiceTest {
         assertThat(neighbourToSetFavorite, sameInstance(favorite));
     }
 
-     // test unitaire sur le getFavorites dans le Service
+    /**
+     *  we ensure that favorites are displayed
+     */
     @Test
     public void getFavoritesWithSuccess() {
+        Neighbour neighbourToSetFavorite1 = service.getNeighbours().get(0);
+        service.addFavorite(neighbourToSetFavorite1);
+        Neighbour neighbourToSetFavorite2 = service.getNeighbours().get(1);
+        service.addFavorite(neighbourToSetFavorite2);
+        List<Neighbour> favorites = service.getFavorites();
+        assertTrue(favorites.contains(neighbourToSetFavorite1));
+        assertTrue(favorites.contains(neighbourToSetFavorite2));
+    }
+
+    /**
+     *  we ensure that favorites are displayed
+     */
+    @Test
+    public void getFavoritesWithSuccess2() {
         Neighbour neighbourToSetFavorite1 = service.getNeighbours().get(0);
         service.addFavorite(neighbourToSetFavorite1);
         Neighbour neighbourToSetFavorite2 = service.getNeighbours().get(1);
@@ -65,9 +84,29 @@ public class NeighbourServiceTest {
         expectedFavorites.add(neighbourToSetFavorite2);
         assertThat(favorites, IsIterableContainingInAnyOrder.containsInAnyOrder(expectedFavorites.toArray()));
         assertThat(favorites, is(expectedFavorites));
-
+    }
+    /**
+     *  we ensure that a favorite is deleted
+     */
+    @Test
+    public void deleteFavoriteWithSuccess() {
+        Neighbour neighbourToSetFavorite = service.getNeighbours().get(2);
+        service.addFavorite(neighbourToSetFavorite);
+        Neighbour favoriteToDelete = service.getFavorites().get(0);
+        service.deleteFavorite(favoriteToDelete);
+        assertFalse(service.getFavorites().contains(favoriteToDelete));
     }
 
-
+    /**
+     *  we ensure that a neighbour is created
+     */
+    @Test
+    public void createNeighboursWithSuccess() {
+        Neighbour newNeighbour = new Neighbour(111, "Pedro", "https://i.pravatar.cc/150?u=a042581f4e29026704d", "in the wood",
+                "234566789", "and much more to be said");
+        Neighbour createdNeighbour = service.createNeighbour(newNeighbour);
+        List<Neighbour> neighbours = service.getNeighbours();
+        assertTrue(neighbours.contains(newNeighbour));
+}
 
 }

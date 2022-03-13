@@ -1,17 +1,10 @@
 
 package com.openclassrooms.entrevoisins.neighbour_list;
 
-import android.app.Activity;
 import android.support.test.espresso.contrib.RecyclerViewActions;
-import android.support.test.espresso.intent.Intents;
-import android.support.test.espresso.intent.rule.IntentsTestRule;
 import android.support.test.espresso.matcher.ViewMatchers;
 import android.support.test.rule.ActivityTestRule;
 import android.support.test.runner.AndroidJUnit4;
-import android.view.View;
-import static android.support.test.espresso.intent.Intents.intended;
-import static android.support.test.espresso.intent.matcher.IntentMatchers.hasComponent;
-
 
 import com.openclassrooms.entrevoisins.DetailsActivity;
 import com.openclassrooms.entrevoisins.R;
@@ -24,7 +17,6 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 
 import static android.support.test.espresso.Espresso.onView;
-import static android.support.test.espresso.action.ViewActions.click;
 import static android.support.test.espresso.assertion.ViewAssertions.matches;
 import static android.support.test.espresso.matcher.ViewMatchers.assertThat;
 import static android.support.test.espresso.matcher.ViewMatchers.hasMinimumChildCount;
@@ -45,13 +37,10 @@ public class NeighboursListTest {
 
     private ListNeighbourActivity mActivity;
     private DetailsActivity mDetailsActivity;
+
     @Rule
     public ActivityTestRule<ListNeighbourActivity> mActivityRule =
-            new ActivityTestRule(ListNeighbourActivity.class);
-
-    public IntentsTestRule<DetailsActivity> mDetailsActivityTestRule =
-            new IntentsTestRule<>(DetailsActivity.class);
-
+                new ActivityTestRule(ListNeighbourActivity.class);
     @Before
     public void setUp() {
         mActivity = mActivityRule.getActivity();
@@ -81,32 +70,4 @@ public class NeighboursListTest {
         // Then : the number of element is 11
         onView(ViewMatchers.withId(R.id.list_neighbours)).check(withItemCount(ITEMS_COUNT-1));
     }
-    /**
-     * When we click an item, the details of the neighbour is shown
-     */
-    @Test
-    public void myNeighboursList_showDetails_shouldOpenDetailsActivity_withDetails() {
-
-        // When perform a click on a neighbour avatar
-        onView(ViewMatchers.withId(R.id.list_neighbours))
-                .perform(RecyclerViewActions.actionOnItemAtPosition(0, click()));
-        // Then : We open DetailsActivity and show a specific  details : favorite name on the avatar view
-        onView(ViewMatchers.withId(R.id.details_textview_nameOnImage)).check(matches(withText("Caroline")));
-    }
-
-    /**
-     * When we click an item, DetailsActivity is opened
-     */
-    @Test
-    public void myNeighboursList_showDetails_shouldOpenDetailsActivity() {
-
-        // When perform a click on a neighbour avatar
-        onView(ViewMatchers.withId(R.id.list_neighbours))
-                .perform(RecyclerViewActions.actionOnItemAtPosition(2, click()));
-        // Then : We open DetailsActivity
-        Intents.init();
-        intended(hasComponent(DetailsActivity.class.getName()));
-    }
-
-
 }
