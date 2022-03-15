@@ -39,7 +39,6 @@ public class NeighbourDetailsTest {
     public IntentsTestRule<ListNeighbourActivity> mActivityRule =
             new IntentsTestRule(ListNeighbourActivity.class);
 
-
     @Before
     public void setUp() {
         mActivity = mActivityRule.getActivity();

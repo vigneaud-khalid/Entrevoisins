@@ -45,7 +45,9 @@ public class DummyNeighbourApiService implements  NeighbourApiService {
      * @param favorite
      */
     public void addFavorite(Neighbour favorite) {
-        favorites.add(favorite);
+        if (!favorites.contains(favorite)) {
+            favorites.add(favorite);
+        }
     }
 
 

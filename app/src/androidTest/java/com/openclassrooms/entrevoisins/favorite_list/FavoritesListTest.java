@@ -43,7 +43,6 @@ public class FavoritesListTest {
     public ActivityTestRule<ListNeighbourActivity> mActivityRule =
             new ActivityTestRule(ListNeighbourActivity.class);
 
-
     @Before
     public void setUp() {
         mActivity = mActivityRule.getActivity();
