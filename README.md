@@ -1,10 +1,6 @@
 # OpenClassrooms
-
 Ce dépôt contient une mini-application pour le P3 du parcours **Grande École du Numérique**.
-
-
 télécharger sur : https://github.com/vigneaud-khalid/Entrevoisins/
-
 1 _ cliquer sur le bouton code en vert puis sur download ZIP
     ![download_ZIP](assets/images/1_download_ZIP.png)
 2 _ décompresser l'archive
