@@ -13,12 +13,6 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".Details3Activity"
-            android:exported="false" />
-        <activity
-            android:name=".Details2Activity"
-            android:exported="false" />
-        <activity
             android:name=".DetailsActivity"
             android:theme="@style/AppTheme.NoActionBar"
             android:exported="false" />

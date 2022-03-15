@@ -38,4 +38,21 @@ public abstract class DummyNeighbourGenerator {
     static List<Neighbour> generateNeighbours() {
         return new ArrayList<>(DUMMY_NEIGHBOURS);
     }
+
+
+
+
+
+    public static List<Neighbour> DUMMY_FAVORITES = Arrays.asList(
+            /*new Neighbour(1, "Caro", "https://i.pravatar.cc/150?u=a042581f4e29026704d", "Saint-Pierre-du-Mont ; 5km",
+                    "+33 6 86 57 90 14",  "Bonjour !   J'aime les jeux de cartes tels la belote et le tarot.."),
+            new Neighbour(2, "Ja", "https://i.pravatar.cc/150?u=a042581f4e29026704e", "Saint-Pierre-du-Mont ; 5km",
+                    "+33 6 86 57 90 14",  "Bonjour !  J'aime les jeux de cartes tels la belote et le tarot.."),
+            new Neighbour(3, "Chlo", "https://i.pravatar.cc/150?u=a042581f4e29026704f", "Saint-Pierre-du-Mont ; 5km",
+                    "+33 6 86 57 90 14",  "Bonjour !  J'aime les jeux de cartes tels la belote et le tarot..")
+*/    );
+
+    static List<Neighbour> generateFavorites() {
+        return new ArrayList<>(DUMMY_FAVORITES);
+    }
 }

@@ -17,7 +17,7 @@
     <android.support.design.card.MaterialCardView
         android:id="@+id/details_cardview_picture"
         android:layout_width="match_parent"
-        android:layout_height="250dp"
+        android:layout_height="240dp"
         android:layout_marginTop="0dp">
 
     <LinearLayout
@@ -39,7 +39,7 @@
             android:id="@+id/details_back_arrow"
             android:layout_width="wrap_content"
             android:layout_height="50dp"
-            android:layout_marginLeft="15dp"
+            android:layout_marginLeft="11dp"
             android:layout_marginTop="-245dp"
             style="@style/Widget.AppCompat.Button.Borderless"
             app:srcCompat="@drawable/ic_baseline_arrow_back_24" />
@@ -50,7 +50,7 @@
             android:layout_height="40dp"
             android:layout_marginLeft="15dp"
             android:layout_marginTop="145dp"
-            android:text="Caroline"
+            android:text="Carolin"
             android:textSize="29sp"
             android:textColor="#FFFFFFFF"></TextView>
 
@@ -90,7 +90,7 @@
                     android:id="@+id/details_textview_descriptionName"
                     android:layout_width="wrap_content"
                     android:layout_height="25dp"
-                    android:layout_margin="16dp"
+                    android:layout_margin="15dp"
                     android:gravity="center"
                     android:text="Caroline"
                     android:textSize="20sp"
@@ -106,7 +106,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="16dp"
-                        android:layout_marginTop="15dp"
+                        android:layout_marginTop="13dp"
                         android:layout_marginBottom="10dp"
                         app:srcCompat="@drawable/ic_baseline_location_on_24" />
 
@@ -115,9 +115,9 @@
                         android:layout_width="wrap_content"
                         android:layout_height="20dp"
                         android:layout_marginLeft="20dp"
-                        android:layout_marginTop="15dp"
+                        android:layout_marginTop="13dp"
                         android:text="Paris"
-                        android:textSize="16sp" />
+                        android:textSize="15sp" />
 
                 </LinearLayout>
 
@@ -131,7 +131,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="16dp"
-                        android:layout_marginTop="15dp"
+                        android:layout_marginTop="13dp"
 
                         android:layout_marginBottom="10dp"
                         app:srcCompat="@drawable/ic_baseline_local_phone_24" />
@@ -141,9 +141,9 @@
                         android:layout_width="wrap_content"
                         android:layout_height="20dp"
                         android:layout_marginLeft="20dp"
-                        android:layout_marginTop="15dp"
+                        android:layout_marginTop="13dp"
                         android:text="4234234345"
-                        android:textSize="16sp" />
+                        android:textSize="15sp" />
 
                 </LinearLayout>
 
@@ -157,8 +157,8 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="16dp"
-                        android:layout_marginTop="15dp"
-                        android:layout_marginBottom="10dp"
+                        android:layout_marginTop="13dp"
+                        android:layout_marginBottom="8dp"
                         app:srcCompat="@drawable/ic_baseline_sports_basketball_24" />
 
                     <TextView
@@ -166,9 +166,9 @@
                         android:layout_width="wrap_content"
                         android:layout_height="20dp"
                         android:layout_marginLeft="20dp"
-                        android:layout_marginTop="15dp"
+                        android:layout_marginTop="13dp"
                         android:text="www.facebook.fr/"
-                        android:textSize="16sp" />
+                        android:textSize="15sp" />
 
                 </LinearLayout>
 
@@ -180,7 +180,7 @@
         <android.support.design.card.MaterialCardView
             android:id="@+id/details_cardview_about"
             android:layout_width="match_parent"
-            android:layout_height="165dp"
+            android:layout_height="155dp"
             android:layout_marginLeft="16dp"
             android:layout_marginTop="18dp"
             android:layout_marginRight="16dp">
@@ -194,7 +194,7 @@
                     android:id="@+id/details_textview_aPropos"
                     android:layout_width="wrap_content"
                     android:layout_height="25dp"
-                    android:layout_margin="16dp"
+                    android:layout_margin="15dp"
                     android:gravity="center"
                     android:text="A propos de moi"
                     android:textSize="20sp"
@@ -205,9 +205,9 @@
                     android:layout_width="wrap_content"
                     android:layout_height="100dp"
                     android:layout_marginLeft="20dp"
-                    android:layout_marginTop="10dp"
+                    android:layout_marginTop="5dp"
                     android:text="Bvnf tytr ttr urtutrurt rt rturtdutrd trurdtudrurd  trudy  dyrtfrt rdtrdtydhty rty dy dreyddy drty drtgdfdfg dfg df gdfgdf"
-                    android:textSize="16sp" />
+                    android:textSize="15sp" />
 
             </LinearLayout>
 

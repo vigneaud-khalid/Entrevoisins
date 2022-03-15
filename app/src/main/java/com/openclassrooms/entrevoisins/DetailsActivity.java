@@ -15,8 +15,15 @@ import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.RequestOptions;
+import com.openclassrooms.entrevoisins.di.DI;
+import com.openclassrooms.entrevoisins.events.AddFavoriteEvent;
+import com.openclassrooms.entrevoisins.events.DeleteNeighbourEvent;
 import com.openclassrooms.entrevoisins.model.Neighbour;
+import com.openclassrooms.entrevoisins.service.NeighbourApiService;
 import com.openclassrooms.entrevoisins.ui.neighbour_list.MyNeighbourRecyclerViewAdapter;
+
+import org.greenrobot.eventbus.EventBus;
+import org.greenrobot.eventbus.Subscribe;
 
 import java.net.URI;
 
@@ -34,9 +41,12 @@ public class DetailsActivity extends AppCompatActivity {
 
     private Uri mURL;
 
+    private NeighbourApiService mApiService;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        mApiService = DI.getNeighbourApiService();
         setContentView(R.layout.activity_details);
         Neighbour neighbour = (Neighbour) getIntent().getExtras().getSerializable("Neighbour");
         Log.d("llll",neighbour.getName());
@@ -70,12 +80,16 @@ public class DetailsActivity extends AppCompatActivity {
         mFavoriteStar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //Context context = this.getContext();
-                //Toast.makeText(context,"Test reussi !",Toast.LENGTH_LONG).show();
+                neighbour.setFavorite(true);
+                mApiService.addFavorite(neighbour);
 
-                // add to favorites
+               //Context context = this.getContext();
+               String msg = neighbour.getName() + "is among your favorites";
+                Log.d("??? Favorite : ", msg);
+               //Toast.makeText(context,"new favorite !",Toast.LENGTH_LONG).show();
+               //Toast.makeText(context,msg,Toast.LENGTH_LONG).show();
+            //finish();
             }
         });
-
     }
 }
