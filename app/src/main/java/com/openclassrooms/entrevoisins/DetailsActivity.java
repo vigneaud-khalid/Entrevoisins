@@ -49,7 +49,6 @@ public class DetailsActivity extends AppCompatActivity {
         mApiService = DI.getNeighbourApiService();
         setContentView(R.layout.activity_details);
         Neighbour neighbour = (Neighbour) getIntent().getExtras().getSerializable("Neighbour");
-        Log.d("llll",neighbour.getName());
         mAvatar = findViewById(R.id.details_imageview_avatar);
         Glide.with(mAvatar.getContext())
                 .load(neighbour.getAvatarUrl())
@@ -80,15 +79,8 @@ public class DetailsActivity extends AppCompatActivity {
         mFavoriteStar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                neighbour.setFavorite(true);
+                // neighbour.setFavorite(true);
                 mApiService.addFavorite(neighbour);
-
-               //Context context = this.getContext();
-               String msg = neighbour.getName() + "is among your favorites";
-                Log.d("??? Favorite : ", msg);
-               //Toast.makeText(context,"new favorite !",Toast.LENGTH_LONG).show();
-               //Toast.makeText(context,msg,Toast.LENGTH_LONG).show();
-            //finish();
             }
         });
     }

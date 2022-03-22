@@ -71,23 +71,6 @@ public class NeighbourServiceTest {
     }
 
     /**
-     *  we ensure that favorites are displayed
-     *//*
-    @Test
-    public void getFavoritesWithSuccess2() {
-        Neighbour neighbourToSetFavorite1 = service.getNeighbours().get(0);
-        service.addFavorite(neighbourToSetFavorite1);
-        Neighbour neighbourToSetFavorite2 = service.getNeighbours().get(1);
-        service.addFavorite(neighbourToSetFavorite2);
-        List<Neighbour> favorites = service.getFavorites();
-        List<Neighbour> expectedFavorites= new ArrayList<>();
-        expectedFavorites.add(neighbourToSetFavorite1);
-        expectedFavorites.add(neighbourToSetFavorite2);
-        assertThat(favorites, IsIterableContainingInAnyOrder.containsInAnyOrder(expectedFavorites.toArray()));
-        assertThat(favorites, is(expectedFavorites));
-    }*/
-
-    /**
      *  we ensure that a favorite is deleted
      */
     @Test

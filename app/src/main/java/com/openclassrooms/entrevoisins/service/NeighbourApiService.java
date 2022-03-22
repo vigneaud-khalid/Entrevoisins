@@ -49,10 +49,4 @@ public interface NeighbourApiService {
      */
     void deleteFavorite(Neighbour favorite);
 
-    /**
-     * Create a Favorite
-     * @param favorite
-     */
-    void createFavorite(Neighbour favorite);
-
 }

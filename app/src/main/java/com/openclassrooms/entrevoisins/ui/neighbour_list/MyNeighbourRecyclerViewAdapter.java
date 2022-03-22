@@ -57,7 +57,6 @@ public class MyNeighbourRecyclerViewAdapter extends RecyclerView.Adapter<MyNeigh
             @Override
             public void onClick(View view) {
                 Context context = holder.mNeighbourAvatar.getContext();
-                //Toast.makeText(context,"Test reussi !",Toast.LENGTH_LONG).show();
                 Intent detailsActivityIntent = new Intent(context, DetailsActivity.class);
                 detailsActivityIntent.putExtra("Neighbour", neighbour);
                 context.startActivity(detailsActivityIntent);
