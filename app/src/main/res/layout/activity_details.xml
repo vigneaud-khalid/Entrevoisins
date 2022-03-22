@@ -30,10 +30,8 @@
             android:id="@+id/details_imageview_avatar"
             android:layout_width="match_parent"
             android:layout_height="250dp"
-            android:scaleType="centerCrop"
             android:layout_gravity="center_horizontal"
-             />
-
+            android:scaleType="centerCrop" />
 
         <ImageButton
             android:id="@+id/details_back_arrow"
@@ -69,7 +67,6 @@
             android:layout_marginBottom="-25dp"
             app:srcCompat="@drawable/ic_baseline_star_24"
             app:backgroundTint="#F8F5F5" >
-
 
         </android.support.design.widget.FloatingActionButton>
 
@@ -132,7 +129,6 @@
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="16dp"
                         android:layout_marginTop="13dp"
-
                         android:layout_marginBottom="10dp"
                         app:srcCompat="@drawable/ic_baseline_local_phone_24" />
 

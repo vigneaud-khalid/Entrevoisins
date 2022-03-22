@@ -50,19 +50,11 @@ public class DummyNeighbourApiService implements  NeighbourApiService {
         }
     }
 
-
-
-
     /**
      * {@inheritDoc}
      */
     @Override
     public List<Neighbour> getFavorites() {
-        for (Neighbour neighbour: neighbours) {
-            if (neighbour.isFavorite()) {
-                favorites.add(neighbour);
-            }
-        };
         return favorites;
     }
 
@@ -75,12 +67,4 @@ public class DummyNeighbourApiService implements  NeighbourApiService {
         favorites.remove(favorite);
     }
 
-    /**
-     * {@inheritDoc}
-     * @param favorite
-     */
-    @Override
-    public void createFavorite(Neighbour favorite) {
-        favorites.add(favorite);
-    }
 }

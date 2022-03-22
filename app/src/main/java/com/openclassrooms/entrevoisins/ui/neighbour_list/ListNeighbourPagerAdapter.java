@@ -21,7 +21,6 @@ public class ListNeighbourPagerAdapter extends FragmentPagerAdapter {
      */
     @Override
     public Fragment getItem(int position) {
-        Log.d("****** position :   ", String.valueOf(position));
         if (position == 0) return NeighbourFragment.newInstance();
         else return FavoriteFragment.newInstance();
     }

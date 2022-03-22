@@ -20,3 +20,4 @@ public class DeleteFavoriteEvent {
         this.favorite = favorite;
     }
 }
+
